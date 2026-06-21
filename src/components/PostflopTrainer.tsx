@@ -50,13 +50,13 @@ export function PostflopTrainer() {
           </div>
 
           <div className="action-row">
-            <button disabled={!!answer} onClick={() => submit('fold')}>
+            <button className="btn-fold" disabled={!!answer} onClick={() => submit('fold')}>
               Fold
             </button>
-            <button disabled={!!answer} onClick={() => submit('call')}>
+            <button className="btn-call" disabled={!!answer} onClick={() => submit('call')}>
               Call
             </button>
-            <button disabled={!!answer} onClick={() => submit('raise')}>
+            <button className="btn-raise" disabled={!!answer} onClick={() => submit('raise')}>
               Raise
             </button>
           </div>

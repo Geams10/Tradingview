@@ -16,10 +16,18 @@ interface CardViewProps {
 
 export function CardView({ card, size = 'md' }: CardViewProps) {
   const isRed = RED_SUITS.has(card.suit);
+  const suit = SUIT_SYMBOL[card.suit];
   return (
     <div className={`card-view card-${size} ${isRed ? 'card-red' : 'card-black'}`}>
-      <span className="card-rank">{card.rank}</span>
-      <span className="card-suit">{SUIT_SYMBOL[card.suit]}</span>
+      <span className="card-index card-index-top">
+        <span className="card-index-rank">{card.rank}</span>
+        <span className="card-index-suit">{suit}</span>
+      </span>
+      <span className="card-pip">{suit}</span>
+      <span className="card-index card-index-bottom">
+        <span className="card-index-rank">{card.rank}</span>
+        <span className="card-index-suit">{suit}</span>
+      </span>
     </div>
   );
 }
